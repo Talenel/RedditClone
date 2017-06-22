@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="www.thymeleaf.org">
+<head th:replace="home :: head" ></head>
+<body>
+<nav th:replace="home :: navbar"  >
+</nav>
+
+<h1>Reddit</h1>
+<!--<p th:text="'id: ' + ${greeting.id}" />-->
+<table class="table table-striped">
+    <tr th:each="item : ${items}">
+        <td><a th:text = "${item.redTitle}" th:href="@{${item.redUrl}}"></a><br/>
+            <p th:text="'submitted by ' + ${item.redAuthor}"></p>
+            <p th:text="${item.getFormatDate()}"></p>
+        </td>
+    </tr>
+</table>
+<!--<a href="/greet/greet">Submit another message</a>-->
+</body>
+
+
+</html>

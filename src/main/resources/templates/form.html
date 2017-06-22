@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="www.thymeleaf.org">
+<head th:replace="home :: head"  ></head>
+<body>
+<nav th:replace="home :: navbar"  >
+
+</nav>
+
+
+<form th:action="@{/add}" th:object="${reddit}" method="post">
+    <div class="form-group">
+        <label for="exampleInputText1">Title</label>
+        <input type="text" class="form-control" id="exampleInputText1" placeholder="Title" th:field="*{redTitle}"/>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputText2">URL</label>
+        <input type="text" class="form-control" id="exampleInputText2" placeholder="Url" th:field="*{redUrl}"/>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputText3">Author</label>
+        <input type="text" class="form-control" id="exampleInputText3" placeholder="Author" th:field="*{redAuthor}"/>
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+</form>
+</body>
+</html>
